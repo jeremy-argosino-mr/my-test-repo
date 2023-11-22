@@ -1,0 +1,16 @@
+name: Sync Workflow Files
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Sync Workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repo
+        uses: actions/checkout@v3
+      - uses: BetaHuhn/repo-file-sync-action@v1.17.19
+        with:
+          GH_PAT: ${{secrets.GITHUB_TOKEN}}
+          COMMIT_BODY: "Synced pipeline files with mr-template-microservice [skip ci]"
+          SKIP_PR: true
