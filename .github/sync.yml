@@ -2,8 +2,8 @@ group:
   - repos: |
       jeremy-argosino-mr/mr-fe-template-pipeline-poc@develop
     files:
-      - source: ./github
-        dest: ./github
+      - source: .github/
+        dest: .github/
         deleteOrphaned: true
         exclude: |
           CODEOWNERS
